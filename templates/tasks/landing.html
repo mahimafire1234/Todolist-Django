@@ -1,0 +1,35 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/landing1.css' %}">
+<link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container col-lg-12 ">
+    <div class="container-1 col-lg-6">
+        <h1>Your to do list </h1>
+        <div class="d-flex justify-content-center col-lg-12">
+            <form method="POST" action="forcreate" class="form-group form-inline ">
+            {%csrf_token%}
+<!--            {{form.title}}-->
+<!--            <input type="text" placeholder="Create your todolist" name="title" class="form-control col-lg-8 mx-2">-->
+             <button type="submit" class="btn btn-success mx-2 col-lg-12 ">Add to todo list</button>
+            </form>
+        </div>
+        <form class="form-group form-inline">
+            <input type="text" placeholder="Search" name="title" class="form-control col-lg-10 mx-2">
+            <button type="submit" class="btn btn-success mx-2">Search</button>
+        </form>
+
+        {%for tasks in task%}
+        <div id="div" class="d-flex justify-content-between my-4">
+            <p class="mx-3 my-2" id="task">{{tasks}}&nbsp;
+            </p>
+            <div>
+                <a href="{%url 'update_task' tasks.pk %}" class="btn btn-success my-2 mx-3">UPDATE</a>
+                <a href="{% url 'delete_task' tasks.pk %} " class="btn btn-danger mx-3">DELETE</a>
+            </div>
+
+        </div>
+        {%endfor%}
+    </div>
+</div>
+

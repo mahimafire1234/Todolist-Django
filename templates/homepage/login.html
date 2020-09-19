@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/homepage.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>ToDo List</title>
+</head>
+<body>
+<div class="container col-lg-12">
+    <div class="container-1 col-lg-6">
+        <img src="{% static 'images/image1.png'%}" class="img-responsive" id="image1">
+        <h1>Log In</h1>
+        <form class="form-group">
+            <div>
+    <!--  email-->
+                <label id="labelemail">Email:</label><br>
+                <input type="email" placeholder="Email" class="col-lg-12 form-control"><br>
+    <!--  password-->
+                <label id="labelpass">Password:</label><br>
+                <input type="password" placeholder="Password" class="col-lg-12 form-control"><br>
+                <button type="submit" class="btn btn-info form-group my-4">LOG IN</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

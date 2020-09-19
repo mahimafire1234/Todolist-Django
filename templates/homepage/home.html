@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/homepage.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>ToDo List</title>
+</head>
+<body>
+<div class="container col-lg-12">
+    <div class="container-1 col-lg-6">
+        <img src="{% static 'images/image1.png'%}" class="img-responsive">
+        <h1>Welcome to Todo List</h1>
+        <form method="post" action="login">
+            {%csrf_token%}
+            <button type="submit" class="btn btn-info form-group">LOG IN</button>
+        </form>
+        <form>
+            <button type="submit" class="btn btn-success form-group">REGISTER</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
